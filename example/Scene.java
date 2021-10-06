@@ -3,8 +3,10 @@ package example;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.net.URL;
+import java.io.File;
 
 import example.classloader.SteganographyClassLoader;
+import example.classloader.SteganographyClassLoaderLocal;
 
 public class Scene {
 
@@ -21,10 +23,17 @@ public class Scene {
 
         Geezer theGeezer = Geezer.getTheGeezer();
 
-        SteganographyClassLoader loader = new SteganographyClassLoader(
-                new URL("https://cdn.njuics.cn/example.BubbleSorter.png"));
+        // SteganographyClassLoader loader = new SteganographyClassLoader(
+        //         new URL("https://cdn.njuics.cn/example.BubbleSorter.png"));
+        // Class c = loader.loadClass("example.BubbleSorter");
 
-        Class c = loader.loadClass("example.BubbleSorter");
+        // SteganographyClassLoaderLocal loader = new SteganographyClassLoaderLocal(
+        //         new File("example.QuickSorter.png"));
+        // Class c = loader.loadClass("example.QuickSorter");
+
+        SteganographyClassLoaderLocal loader = new SteganographyClassLoaderLocal(
+            new File("example.SelectSorter.png"));
+        Class c = loader.loadClass("example.SelectSorter");
 
         Sorter sorter = (Sorter) c.newInstance();
 
