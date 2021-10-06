@@ -2,7 +2,7 @@ package example;
 
 public class BubbleSorter implements Sorter {
 
-    private int[] a;
+    protected int[] a;
 
     @Override
     public void load(int[] a) {
