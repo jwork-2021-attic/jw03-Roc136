@@ -3,10 +3,8 @@ package example;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.net.URL;
-import java.io.File;
 
 import example.classloader.SteganographyClassLoader;
-import example.classloader.SteganographyClassLoaderLocal;
 
 public class Scene {
 
@@ -27,13 +25,31 @@ public class Scene {
         //         new URL("https://cdn.njuics.cn/example.BubbleSorter.png"));
         // Class c = loader.loadClass("example.BubbleSorter");
 
-        // SteganographyClassLoaderLocal loader = new SteganographyClassLoaderLocal(
-        //         new File("example.QuickSorter.png"));
+        // SteganographyClassLoader loader = new SteganographyClassLoader(
+        //         new URL("file:example.QuickSorter.png"));
         // Class c = loader.loadClass("example.QuickSorter");
 
-        SteganographyClassLoaderLocal loader = new SteganographyClassLoaderLocal(
-            new File("example.SelectSorter.png"));
+        SteganographyClassLoader loader = new SteganographyClassLoader(
+            new URL("file:example.SelectSorter.png"));
         Class c = loader.loadClass("example.SelectSorter");
+
+
+        // skycloud36
+        // SteganographyClassLoader loader = new SteganographyClassLoader(
+        //         new URL("https://pic.imgdb.cn/item/615dc6292ab3f51d91521a25.png"));
+        // Class c = loader.loadClass("example.QuickSort");
+
+        // SteganographyClassLoader loader = new SteganographyClassLoader(
+        //         new URL("file:tmp/example.QuickSort.png"));
+        // Class c = loader.loadClass("example.QuickSort");
+
+        // SteganographyClassLoader loader = new SteganographyClassLoader(
+        //         new URL("https://pic.imgdb.cn/item/615dc7552ab3f51d915569da.png"));
+        // Class c = loader.loadClass("example.AlterSort");
+
+        // SteganographyClassLoader loader = new SteganographyClassLoader(
+        //         new URL("file:tmp/example.AlterSort.png"));
+        // Class c = loader.loadClass("example.AlterSort");
 
         Sorter sorter = (Sorter) c.newInstance();
 
