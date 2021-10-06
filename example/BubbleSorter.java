@@ -9,7 +9,7 @@ public class BubbleSorter implements Sorter {
         this.a = a;
     }
 
-    protected void swap(int i, int j) {
+    private void swap(int i, int j) {
         int temp;
         temp = a[i];
         a[i] = a[j];
@@ -17,7 +17,7 @@ public class BubbleSorter implements Sorter {
         plan += "" + a[i] + "<->" + a[j] + "\n";
     }
 
-    protected String plan = "";
+    private String plan = "";
 
     @Override
     public void sort() {
